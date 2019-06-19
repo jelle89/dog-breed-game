@@ -11,7 +11,7 @@ export default function DogList(props) {
             <ul>
             {props.dogs.map(dog =>
                 <li key={dog}>
-                    <Link to={`breeds/${dog}`}>{dog}</Link>
+                    <Link to={`${dog}`}>{dog}</Link>
                 </li>
                 )}
             </ul>
