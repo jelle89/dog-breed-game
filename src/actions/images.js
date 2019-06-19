@@ -13,7 +13,7 @@ export function getImagesByBreed(breed) {
     return function(dispatch) {
         request(`https://dog.ceo/api/breed/${breed}/images`)
         .then(response => {
-            dispatch(setImages(response.body.message)) //object props or array?
+            dispatch(setImages(response.body.message))
         })
     }
 }

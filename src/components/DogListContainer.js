@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 
 class DogListContainer extends Component {
     componentDidMount() {
+        console.log('componentDidMount test:')
         this.props.getDogs();
     }
 

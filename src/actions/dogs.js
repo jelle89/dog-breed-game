@@ -8,13 +8,20 @@ export function setDogs(arrayOfDogs) {
 }
 
 export function getDogs() {
-    return function(dispatch) {
-
-        request('https://dog.ceo/api/breeds/list/all')
-            .then(response => {
-                dispatch(setDogs(Object.keys(response.body.message)))
-            })
+    // console.log('getDogs test')
+    return function(dispatch, getState) {
+        // console.log('dispatch test:', dispatch)
+        const state = getState();
+        // console.log("STATE", state)
+        if (!state.dogs.length) {
+            request('https://dog.ceo/api/breeds/list/all')
+                .then(response => {
+                    // console.log('response test:', response)
+                    dispatch(setDogs(Object.keys(response.body.message)))
+                })
+        }
     }
 }
+
 
 export const SET_DOGS = "SET_DOGS"

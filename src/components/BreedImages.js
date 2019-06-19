@@ -17,6 +17,3 @@ export default function BreedImages(props) {
         </div>
     )
 }
-
-
-//props.images.slice(10)
