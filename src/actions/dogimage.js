@@ -1,11 +1,12 @@
 import * as request from 'superagent'
 
 
-export default function dogImage () {
-
+export default function dogImage(breed) {
+    return function(dispatch) {
     request(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images`)
-    .then(data => console.log(data.body))
+    .then(response => console.log("WHAT IS THE RESPONSE?:", response.body.message))
     .catch(err => console.log(err))
+    }
 }
 
 export function getDogImage(dogimages) {

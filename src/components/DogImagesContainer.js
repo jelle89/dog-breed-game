@@ -1,10 +1,12 @@
 import React from 'react'
 import DogImages from './DogImages'
-import { connect } from 'tls';
+import { connect } from 'react-redux';
 
-export default class DogImagesContainer extends React.Component {
+class DogImagesContainer extends React.Component {
     componentDidMount() {
-        this.props.dogImage;
+        console.log("WHAT ARE MY PROPS?:", this.props)
+        // const breed = this.props
+        this.props.dogImage(breed);
     }
     
     render() {
@@ -16,8 +18,8 @@ export default class DogImagesContainer extends React.Component {
     }
 }
 
-mapStateToProps = (reduxState) => {
+const mapStateToProps = (reduxState) => {
     dogimages: reduxState.dogimages;
 }
 
-export default connect(mapStateToProps, {dogimage})(DogImagesContainer)   
+export default connect(mapStateToProps, {dogImage})(DogImagesContainer)   
