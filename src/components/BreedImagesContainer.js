@@ -5,7 +5,7 @@ import {getImagesByBreed} from '../actions/images'
 
 class BreedImagesContainer extends React.Component {
     componentDidMount() {
-        const breed = this.props.match.params.breed     //correct path?
+        const breed = this.props.match.params.breed
         this.props.getImagesByBreed(breed)
     }
 

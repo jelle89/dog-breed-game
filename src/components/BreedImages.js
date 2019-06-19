@@ -5,14 +5,16 @@ export default function BreedImages(props) {
     return (
         <div>
             <h1>Photos of "this" dog</h1>
-            {console.log("THERE ARE THE PROPS RECIEVING FROM BREEDIMAGESCONTAINER:", props.images)}
+
+            <Link to="/breeds/list">Go back to list of breeds</Link>
+            <Link to="/">Home Page</Link>
+
+            {console.log("THERE ARE THE PROPS:", props)}
+
             {props.images.map(image => 
                 <img src={image} alt="dog" />
                 )}
 
-
-            <Link to="/breeds/list">Go back to list of breeds</Link>
-            {/* <Link to="/">Home Page</Link> */}
         </div>
     )
 }
