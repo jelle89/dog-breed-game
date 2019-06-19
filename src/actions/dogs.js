@@ -1,5 +1,6 @@
 import * as request from 'superagent'
 
+
 export function setDogs(arrayOfDogs) {
     return {
         type: "SET_DOGS",
