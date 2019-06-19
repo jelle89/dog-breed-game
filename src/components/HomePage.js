@@ -8,7 +8,7 @@ class HomePage extends React.Component {
       <div className="homepage">
         <h1>Dog breed game</h1>
         <p>click the links below to memorize the dog breeds and play the games</p>
-        <Link to="/breeds/list">Memorize dog breeds</Link>
+        <Link to="/list">Memorize dog breeds</Link>
       </div>
     );
   }

@@ -17,8 +17,8 @@ class App extends React.Component {
           </header>
           <main>
             <Route exact path="/" component={HomePage} />
-            <Route exact path="/breeds/list" component={DogListContainer} />
-            <Route exact path="/breeds/:breed" component={BreedImagesContainer} />
+            <Route exact path="/list" component={DogListContainer} />
+            <Route exact path="/breed/:breed" component={BreedImagesContainer} />
           </main>
         </div>
       </Provider>
