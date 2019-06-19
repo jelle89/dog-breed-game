@@ -9,8 +9,8 @@ export function setDogs(arrayOfDogs) {
 
 export function getDogs() {
     return function(dispatch) {
+
         request('https://dog.ceo/api/breeds/list/all')
-        // request('https://dog.ceo/dog-api/documentation/')
             .then(response => {
                 dispatch(setDogs(Object.keys(response.body.message)))
             })
