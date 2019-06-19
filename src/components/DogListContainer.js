@@ -10,7 +10,6 @@ class DogListContainer extends Component {
     }
 
     render() {
-        console.log("hello")
         if(!this.props.dogs) return 'Have patience the dogs are coming...'
         return <DogList dogs={this.props.dogs} />
     }

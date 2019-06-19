@@ -4,6 +4,7 @@ import store from './store';
 import {Provider} from 'react-redux';
 import {Route} from 'react-router-dom'
 import DogListContainer from './components/DogListContainer';
+import BreedImagesContainer from './components/BreedImagesContainer'
 import HomePage from './components/HomePage';
 
 class App extends React.Component {
@@ -17,7 +18,7 @@ class App extends React.Component {
           <main>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/breeds/list" component={DogListContainer} />
-            {/* <Route exact path="/breeds/:breed" component={DogImagesContainer} /> */}
+            <Route exact path="/breeds/:breed" component={BreedImagesContainer} />
           </main>
         </div>
       </Provider>
