@@ -4,7 +4,7 @@ import store from './store';
 import {Provider} from 'react-redux';
 import {Route} from 'react-router-dom'
 import DogListContainer from './components/DogListContainer';
-import HomePage from './components/homepage';
+import HomePage from './components/HomePage';
 
 class App extends React.Component {
   render() {
