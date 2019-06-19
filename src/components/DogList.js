@@ -1,4 +1,5 @@
 import * as React from 'react'
+import {Link} from 'react-router-dom'
 
 export default function DogList(props) {
     return (
@@ -10,7 +11,7 @@ export default function DogList(props) {
             <ul>
             {props.dogs.map(dog =>
                 <li key={dog}>
-                    {dog}
+                    <Link to={`breeds/${dog}`}>{dog}</Link>
                 </li>
                 )}
             </ul>

@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import store from './store';
 import {Provider} from 'react-redux';
+import {Route} from 'react-router-dom'
 import DogListContainer from './components/DogListContainer';
+// import HomePage from './components/homepage';
 
 class App extends React.Component {
   render() {
@@ -13,7 +15,9 @@ class App extends React.Component {
             <h1 className="App-title">Dog Breeds App</h1>
           </header>
           <main>
-          <DogListContainer />
+            {/* <Route exact path="/" component={HomePage} /> */}
+            <Route exact path="/breeds/list" component={DogListContainer} />
+            {/* <Route exact path="/breeds/:breed" component={DogImagesContainer} /> */}
           </main>
         </div>
       </Provider>
