@@ -9,6 +9,7 @@ import * as request from 'superagent'
 
 export function setQandA(threeDogObjects) {
     console.log("2 THIS RUNS")
+    console.log("THREEDOGOBJECTS",threeDogObjects)
     return {
         type: "SET_Q_AND_A",
         payload: {
