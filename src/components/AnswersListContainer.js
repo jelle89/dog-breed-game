@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {getRandomBreeds} from '../actions/answers'
+// import {getRandomBreeds} from '../actions/answers'
 import { generateQuestionAndAnswers } from '../actions/dogs'
 import AnswersList from './AnswersList'
 
@@ -16,20 +16,21 @@ class AnswersListContainer extends Component {
     }
 
     render() {
-
+        
         // Combine the answers into an array randomly
-        const answers = [
-            {...this.props.wrongAnswerOne, correct: false}, 
-            {...this.props.wrongAnswerTwo, correct: false},
-            // same for correct
-        ];
+        // const answers = [
+        //     {...this.props.wrongAnswerOne, correct: false}, 
+        //     {...this.props.wrongAnswerTwo, correct: false},
+        //     // same for correct
+        // ];
 
         // Shuffle the answers
 
 
         if(this.props.answers.length === 0) return 'Picking random dogs...';
 
-        return <AnswersList answers={this.props.answers} />
+        return <AnswersList answers={this.props.answers} question={this.props.question}/>
+         
 
         //return <AnswersList wrongAnswerOne={this.props.wrongAnswerOne} wrongAnswerTwo={this.props.wrongAnswerTwo} />
     }
@@ -44,7 +45,7 @@ const mapStateToProps = (reduxState) => {
 
     return {
         answers: selectedDogs,
-        question: selectedDogs[0]     
+        question: selectedDogs[Math.floor(Math.random() * selectedDogs.length)]   
     }
 }
 

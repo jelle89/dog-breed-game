@@ -17,7 +17,9 @@ export default function AnswersList(props) {
                     <ul>
                         {
                             props.answers.map(renderButton)
+                            
                         }
+                       
                     </ul>
                 }
 
