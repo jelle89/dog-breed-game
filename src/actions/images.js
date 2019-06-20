@@ -14,7 +14,8 @@ export function getImagesByBreed(breed) {
         request(`https://dog.ceo/api/breed/${breed}/images`)
         .then(response => {
             dispatch(setImages(response.body.message))
-        })
+            console.log(response.body.message)
+        }) 
     }
 }
 

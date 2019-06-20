@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import {Route} from 'react-router-dom'
 import DogListContainer from './components/DogListContainer';
 import BreedImagesContainer from './components/BreedImagesContainer'
+import RandomImageContainer from './components/RandomImageContainer'
 import HomePage from './components/HomePage';
 
 class App extends React.Component {
@@ -19,9 +20,12 @@ class App extends React.Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/list" component={DogListContainer} />
             <Route exact path="/breed/:breed" component={BreedImagesContainer} />
+            <Route exact path="/game1randomimage" component={RandomImageContainer} />
           </main>
+          
         </div>
       </Provider>
+      
     );
   }
 }
