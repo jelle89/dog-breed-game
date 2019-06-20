@@ -23,29 +23,23 @@ export function getDogs() {
     }
 }
 
-function createQuestionAndAnswers(dogs){
-    // Shuffle array
+export function createQuestionAndAnswers(dogs){
     const shuffledDogs = [...dogs].sort(() => 0.5 - Math.random());
-
-    // Get sub-array of first n elements after shuffled
     let selectedDogs = shuffledDogs.slice(0, 3);
-
-    console.log(shuffledDogs)
-    console.log(selectedDogs)
-
+    
     return {
         answers: selectedDogs,
-        question: selectedDogs[0]     
+        question: selectedDogs    
     }
 }
 
 export function generateQuestionAndAnswers(){
-    console.log('HEY I JUST ME YOU, AND THIS IS CRAZY, BUT I AM FUNCTION, SO CALL MAYBE?')
     return function(dispatch, getState) {
         // console.log('dispatch test:', dispatch)
         const state = getState();
         // console.log("STATE", state)
         if (state.dogs.length === 0) {
+            
             request('https://dog.ceo/api/breeds/list/all')
                 .then(response => {
                     // console.log('response test:', response)
@@ -56,9 +50,19 @@ export function generateQuestionAndAnswers(){
                     console.log(createQuestionAndAnswers(dogs))
                 })
         } else {
+            
             // dispatch a question and answer to redux here
-        }
+            
     }
+  }
+}
+
+export function getCorrectAnswer() {
+    
+    // if(this.props.answer === this.state.randomImage) {
+    //     return 
+    // }
+
 }
 
 

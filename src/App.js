@@ -7,6 +7,7 @@ import DogListContainer from './components/DogListContainer';
 import BreedImagesContainer from './components/BreedImagesContainer'
 import HomePage from './components/HomePage';
 import AnswersListContainer from './components/AnswersListContainer';
+import GameOne from './components/GameOne'
 
 class App extends React.Component {
   render() {
@@ -21,6 +22,8 @@ class App extends React.Component {
             <Route exact path="/list" component={DogListContainer} />
             <Route exact path="/breed/:breed" component={BreedImagesContainer} />
             <Route exact path="/gametest" component={AnswersListContainer} />
+            <Route exact path="/gameone" component={GameOne} />
+            
           </main>
         </div>
       </Provider>

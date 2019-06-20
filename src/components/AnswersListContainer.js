@@ -13,6 +13,7 @@ class AnswersListContainer extends Component {
         // once we have the dogs
         // create a question and an answer
         // dispatch action to reducer
+    
     }
 
     render() {
@@ -21,19 +22,18 @@ class AnswersListContainer extends Component {
         const answers = [
             {...this.props.wrongAnswerOne, correct: false}, 
             {...this.props.wrongAnswerTwo, correct: false},
-            // same for correct
-        ];
+            {...this.props.correctAnswer, correct: true}
+        ]
+        
 
-        // Shuffle the answers
-
-
-        if(this.props.answers.length === 0) return 'Picking random dogs...';
+        // if(this.props.answers.length === 0) return 'Picking random dogs...';
 
         return <AnswersList answers={this.props.answers} />
 
         //return <AnswersList wrongAnswerOne={this.props.wrongAnswerOne} wrongAnswerTwo={this.props.wrongAnswerTwo} />
     }
 }
+
 
 const mapStateToProps = (reduxState) => {
     // Shuffle array
@@ -44,36 +44,12 @@ const mapStateToProps = (reduxState) => {
 
     return {
         answers: selectedDogs,
-        question: selectedDogs[0]     
+        question: selectedDogs   
     }
 }
+
 
 export default connect(mapStateToProps, { generateQuestionAndAnswers })(AnswersListContainer)
 
 
 // 
-
-
-
-// WE NEED
-
-// THE DATA
-// X The list of dogs
-
-// Question & Answer
-// X Some random dogs and the dog from the question (Answers)
-// X A random dog (Question)
-
-// SAVE THE DATA
-// We need to store this information
-// Action
-// Dispatch the action
-// Handle the action to update the store
-// Reducer
-
-// DISPLAY THE DATA
-// Component
-// Put the data from the store into the component 
-
-// MAKE IT INTERACTIVE
-// ... worry about that later

@@ -9,7 +9,6 @@ export default function AnswersList(props) {
     // what are they { answers: [] }
     return (
         <div>
-            <h2>Which dog breed is it?</h2>
             <h3>Choose your answer...</h3>
             <div className="allAnswers">
                 {
