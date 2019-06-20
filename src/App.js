@@ -6,7 +6,7 @@ import {Route} from 'react-router-dom'
 import DogListContainer from './components/DogListContainer';
 import BreedImagesContainer from './components/BreedImagesContainer'
 import HomePage from './components/HomePage';
-import AnswersListContainer from './components/AnswersListContainer';
+import GameOneContainer from './components/GameOneContainer';
 
 class App extends React.Component {
   render() {
@@ -20,7 +20,7 @@ class App extends React.Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/list" component={DogListContainer} />
             <Route exact path="/breed/:breed" component={BreedImagesContainer} />
-            <Route exact path="/gametest" component={AnswersListContainer} />
+            <Route exact path="/gametest" component={GameOneContainer} />
           </main>
         </div>
       </Provider>
