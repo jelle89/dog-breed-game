@@ -8,20 +8,20 @@ class RandomImageContainer extends React.Component {
     componentDidMount() {
         
         this.props.getRandomImage()
-       
+        console.log(this.props.getRandomImage())
     }
     
     render() {
         console.log(this.props.images)
-        if(!this.props.images) return 'Be patient dog images are coming...'
-        return <RandomImage images={this.props.images} />
+        if(!this.props.random) return 'Be patient dog images are coming...'
+        return <RandomImage random={this.props.getRandomImage()} />
         
     }
 }
 
 const mapStateToProps = (reduxState) => {
     return {
-        images: reduxState.images
+        random: reduxState.random
     }
 }
 

@@ -4,12 +4,12 @@ export function setRandomImage(url) {
     return {
         type: "SET_RANDOMIMAGE",
         payload: {
-            images: url
+            random: url
         }
     }
 }
 
-export function getRandomImage(breed) {
+export function getRandomImage(dispatch) {
     return function(dispatch) {
         request(`https://dog.ceo/api/breeds/image/random`)
         .then(response => {

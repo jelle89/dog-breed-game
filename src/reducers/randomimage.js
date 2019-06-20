@@ -1,10 +1,10 @@
 import { SET_RANDOMIMAGE } from '../actions/randomimage'
 
-export default (reduxState = [], action = {}) => {
+export default (reduxState = [], action={}) => {
     switch (action.type) {
         case SET_RANDOMIMAGE:
             return [
-                action.payload.images
+                action.payload.random
             ]
         default:
             return reduxState

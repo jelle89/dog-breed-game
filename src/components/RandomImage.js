@@ -2,7 +2,7 @@ import * as React from 'react'
 import {Link} from 'react-router-dom'
 
 export default function RandomImage(props) {
-    const images = props.images
+    const images = props.getRandomImage()
     console.log(images)
     return (
         <div>
@@ -12,9 +12,9 @@ export default function RandomImage(props) {
             <Link to="/">Home Page</Link>
 
             
-            {images.map(image => 
-                <img src={image} alt="dog" />
-                )}
+           
+                <img src={images} alt="dog" />
+                
        
                 
 
