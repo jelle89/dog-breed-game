@@ -2,6 +2,11 @@ import * as React from 'react'
 //import {Link} from 'react-router-dom'
 
 export default function AnswersList(props) {
+    // questions:
+    // YES getting called?
+    // do we have props?
+    console.log('PROPS', props)
+    // what are they { answers: [] }
     return (
         <div>
             <h2>Which dog breed is it?</h2>
@@ -16,11 +21,6 @@ export default function AnswersList(props) {
                     </ul>
                 }
 
-
-
-                                <button className="answerOne">Answer 1</button>
-                <button className="answerTwo">Answer 2</button>
-                <button className="answerThree">Answer 3</button>
             </div>
         </div>
     )
@@ -31,9 +31,12 @@ function selectAnswer(obj) {
 }
 
 function renderButton(obj) {
+    // geeting clled?
+    // what is obj?
+    console.log('OBJ', obj) // "malinois"
     return (
-        <li key={obj.name}>
-            <button onClick={() => selectAnswer(obj)}>obj.name</button>
+        <li key={obj}>
+            <button onClick={() => selectAnswer(obj)}>{ obj }</button>
         </li>
     )
 }
