@@ -18,6 +18,7 @@ export default function RandomImage(props) {
             <Link to="/">Home Page</Link>
 
          <img src={ images } alt="Dog" />  
+         <h1> { secondLevelLocation }</h1>
         
       
         

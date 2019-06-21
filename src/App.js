@@ -21,11 +21,9 @@ class App extends React.Component {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/list" component={DogListContainer} />
             <Route exact path="/breed/:breed" component={BreedImagesContainer} />
-<<<<<<< HEAD
             <Route exact path="/game1randomimage" component={RandomImageContainer} />
-=======
             <Route exact path="/gametest" component={AnswersListContainer} />
->>>>>>> feature3/jelle
+
           </main>
           
         </div>

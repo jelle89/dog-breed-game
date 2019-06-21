@@ -1,18 +1,16 @@
 a:link, a:visited {
-    background-color: #f44336;
+    background-color: turquoise;
     color: white;
-    padding: 14px 25px;
+    padding: 10px 14px 10px 30px;
     margin: 5px 5px;
     text-align: center; 
     text-decoration: none;
     display: inline-block;
-    border: 1px solid black;
-    outline-style: solid;
-    outline-color: black;
+    border-radius: 15px;
   }
   
   a:hover, a:active {
-    background-color: red;
+    background-color: blue;
   }
 
   img {
@@ -24,3 +22,13 @@ a:link, a:visited {
     margin-left: auto;
     margin-right: auto
     }
+
+    ul, div {
+      text-align: center;
+      display: inline;
+      list-style-image: url('https://image.flaticon.com/icons/svg/884/884183.svg');
+      list-style-position: inside;
+      margin-left: 0;
+      padding-left: 1em;
+      text-indent: -1em;
+   }
