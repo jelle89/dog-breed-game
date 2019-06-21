@@ -10,6 +10,7 @@ class HomePage extends React.Component {
         <p>click the links below to memorize the dog breeds and play the games</p>
         <Link to="/list">Memorize dog breeds</Link>
         <Link to="/gameone">Guess the dog breed</Link>
+        <Link to="/randomimage"> Random dog image </Link>
       </div>
     );
   }

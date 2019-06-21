@@ -4,17 +4,17 @@ import {Link} from 'react-router-dom'
 export default function DogList(props) {
     return (
         <div>
-            <h1>A Wonderful List of Dog Breeds</h1>
+            <h1>A List of Dog Breeds</h1>
             
-            The amount of dog breeds on this list is: {props.dogs.length} !!
-            <ul>
+            <h2>The amount of dog breeds on this list is: {props.dogs.length} !! Good luck.</h2>
+            
             {props.dogs.map(dog =>
-                <li key={dog}>
+                <ul key={dog}>
                     <Link to={`/breed/${dog}`}>{dog}</Link>
-                </li>
+                </ul>
                 )}
-            </ul>
-            <Link to="/">Go to HomePage</Link>
+            
+            <Link to="/">Back to HomePage</Link>
         </div>
         )
 }
