@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import AnswersList from './AnswersList'
-import makeQuestion from '../actions/dogs'
+
 
 class AnswersListContainer extends Component {
     
@@ -25,3 +25,5 @@ const mapDispatchToProps = (reduxState) => {
 
 export default connect
     (mapStateToProps, mapDispatchToProps)(AnswersListContainer)
+
+    
