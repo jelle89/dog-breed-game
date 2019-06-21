@@ -1,9 +1,19 @@
 import * as request from 'superagent'
 
-export function setDogs(arrayOfDogs) {
+export const SET_DOGS = "SET_DOGS"
+export const SET_QUESTION = "SET_QUESTION"
+
+function setDogs(arrayOfDogs) {
     return {
-        type: "SET_DOGS",
+        type: SET_DOGS,
         payload: arrayOfDogs
+    }
+}
+
+function setQuestion (question) {
+    return {
+        type: SET_QUESTION,
+        payload: question
     }
 }
 
@@ -23,17 +33,21 @@ export function getDogs() {
     }
 }
 
-export function createQuestionAndAnswers(dogs){
-    const shuffledDogs = [...dogs].sort(() => 0.5 - Math.random());
-    let selectedDogs = shuffledDogs.slice(0, 3);
-    
-    return {
-        answers: selectedDogs,
-        question: selectedDogs    
-    }
+function shuffle (array) {
+    return [...array].sort(() => 0.5 - Math.random());
 }
 
-export function generateQuestionAndAnswers(){
+function createQuestion(dogs){
+    const shuffledDogs = shuffle(dogs)
+    let answers = shuffledDogs.slice(0, 3);
+
+    const shuffledAnswers = shuffle(answers)
+    const answer = shuffledAnswers[0]
+
+    return { answers, answer }
+}
+
+export function makeQuestion () {
     return function(dispatch, getState) {
         // console.log('dispatch test:', dispatch)
         const state = getState();
@@ -47,7 +61,31 @@ export function generateQuestionAndAnswers(){
                     dispatch(setDogs(dogs))
 
                     // dispatch a question and answer to redux
-                    console.log(createQuestionAndAnswers(dogs))
+                    const question = createQuestion(dogs)
+
+                    const { answer } = question
+                    // ^^^ This is the same as writing:
+                    // const answer = question.answer
+
+                    const component = encodeURIComponent(answer)
+                    console.log('component test:', component)
+                    const url = `https://dog.ceo/api/breed/${component}/images/random`
+
+                    request(url)
+                        .then(response => {
+                            console.log('response test:', response.body)
+                            const { message } = response.body
+                            // const messages = response.body.message
+                            console.log('message test:', message)
+                            question.image = message
+
+                            const action = setQuestion(question)
+                            dispatch(action)
+                            // ^^^ Same as writing:
+                            // dispatch(setQuestion(question))
+                        })
+                    console.log("questions and answers:", { ...question })
+                    console.log('how', Object.keys(question))
                 })
         } else {
             
@@ -56,14 +94,3 @@ export function generateQuestionAndAnswers(){
     }
   }
 }
-
-export function getCorrectAnswer() {
-    
-    // if(this.props.answer === this.state.randomImage) {
-    //     return 
-    // }
-
-}
-
-
-export const SET_DOGS = "SET_DOGS"

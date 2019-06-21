@@ -7,6 +7,30 @@ export default function AnswersList(props) {
     // do we have props?
     console.log('PROPS', props)
     // what are they { answers: [] }
+
+    function checkAnswer(guess) {
+        const isCorrect = guess === props.answer
+
+        if (isCorrect) {
+            alert('correct')
+        } else {
+            alert(`incorrect! the answer is ${props.answer}`)
+        }
+    }
+    
+    function renderButton(answer) {
+        // geeting clled?
+        // what is obj?
+        console.log('answer', answer) // "malinois"
+        return (
+            <li key={answer}>
+                <button onClick={() => checkAnswer(answer)}>
+                    { answer }
+                </button>
+            </li>
+        )
+    }
+
     return (
         <div>
             <h3>Choose your answer...</h3>
@@ -22,20 +46,5 @@ export default function AnswersList(props) {
 
             </div>
         </div>
-    )
-}
-
-function selectAnswer(obj) {
-
-}
-
-function renderButton(obj) {
-    // geeting clled?
-    // what is obj?
-    console.log('OBJ', obj) // "malinois"
-    return (
-        <li key={obj}>
-            <button onClick={() => selectAnswer(obj)}>{ obj }</button>
-        </li>
     )
 }

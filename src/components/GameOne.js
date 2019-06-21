@@ -1,37 +1,34 @@
 import React from 'react'
 import AnswersListContainer from './AnswersListContainer';
+import { makeQuestion } from '../actions/dogs'
+import { connect } from 'react-redux'
 
-
-class GameOne extends React.Component {
-    
-    constructor(props) {
-        console.log('props', props)
-        super(props);
-        this.state = {
-            randomImage: {}
-        }
-    }
-    
+class GameOne extends React.Component {    
     componentDidMount() {
-        fetch(`https://dog.ceo/api/breeds/image/random`)
-        .then(res => res.json())
-        .then(data => this.setState({ randomImage: data.message }))   
+        this.props.makeQuestion()   
     }
    
-
     render() {
         console.log('this state',this.state)
-        const randomImg = this.state.randomImage
         
         return (
-        <div className="gameOneImage">
-            <h1>What breed is this dog?</h1>
-            <img src={randomImg} alt="Img" key={randomImg} />
-            <AnswersListContainer />
-        </div>
+            <div className="gameOneImage">
+                <h1>What breed is this dog?</h1>
+                <img src={this.props.image} alt={this.props.answer} />
+                <AnswersListContainer />
+            </div>
         )
     }
 }
 
 
-export default GameOne
+const mapStateToProps = (reduxState) => {
+    return reduxState.question
+}
+
+const mapDispatchToProps = { makeQuestion }
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(GameOne)
