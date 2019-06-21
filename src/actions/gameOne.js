@@ -7,13 +7,15 @@ import * as request from 'superagent'
 //     }
 // }
 
-export function setQandA(threeDogObjects) {
+export function setQandA(message) {
+    const keys = Object.keys(message)
+    const QandA = createQandA(keys)
     console.log("2 THIS RUNS")
-    console.log("THREEDOGOBJECTS",threeDogObjects)
+    console.log("THREEDOGOBJECTS",QandA)
     return {
         type: "SET_Q_AND_A",
         payload: {
-            threeDogs: threeDogObjects
+            threeDogs: QandA
         }
     }
 }
@@ -35,7 +37,8 @@ export function getThreeDogs() {
         if (state.dogs.length === 0) {
             request('https://dog.ceo/api/breeds/list/all')
                 .then(response => {
-                    dispatch(setQandA(createQandA(Object.keys(response.body.message))))
+                    const action = setQandA(response.body.message)
+                    dispatch(action)
                 })
         } else {
             dispatch(setQandA(createQandA(state.dogs)))

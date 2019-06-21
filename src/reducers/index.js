@@ -7,5 +7,5 @@ import gameOne from './gameOne'
 export default combineReducers({
     dogs,
     images,
-    gameOne
+    gameOne: gameOne
 })

@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import GameOne from './GameOne'
 import {getThreeDogs} from '../actions/gameOne'
-// import {createQandA} from '../actions/gameOne'
-// import {setQandA} from '../actions/gameOne'
+import {createQandA} from '../actions/gameOne'
+import {setQandA} from '../actions/gameOne'
 
 class GameOneContainer extends Component {
     componentDidMount() {
@@ -12,9 +12,9 @@ class GameOneContainer extends Component {
     }
     render() {
         console.log("HELLO!")
-        // if(this.props.threeDogs.length === 0) return 'Picking random dogs...'
-        // return <GameOne threeDogs={this.props.threeDogs} />
-        return <GameOne />
+        if(this.props.gameOne === 0) return 'Picking random dogs...'
+        return <GameOne threeDogs={this.props.gameOne} />
+        // return <GameOne />
 
     }
 }
@@ -23,9 +23,13 @@ const mapStateToProps = (reduxState) => {
     // console.log("STATE", reduxState)
     // console.log("HERE!", reduxState.threeDogs)
     const selectedDogs = [...reduxState.gameOne]
+    console.log("SELECTED DOGS", selectedDogs)
+    // return {
+    //     answers: selectedDogs,
+    //     question: selectedDogs[0]
+    // }
     return {
-        answers: selectedDogs,
-        question: selectedDogs[0]
+        threeDogs: selectedDogs
     }
 }
 
@@ -38,5 +42,5 @@ const mapStateToProps = (reduxState) => {
 //     }
 // }
 
-export default connect(mapStateToProps, { getThreeDogs })(GameOneContainer)
+export default connect(mapStateToProps, { getThreeDogs, createQandA, setQandA })(GameOneContainer)
 //export default GameOneContainer
