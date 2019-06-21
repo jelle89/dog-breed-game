@@ -14,6 +14,9 @@ export function getRandomImage(dispatch) {
         request(`https://dog.ceo/api/breeds/image/random`)
         .then(response => {
             dispatch(setRandomImage(response.body.message))
+            var pathArray = window.location.pathname.split('/');
+            var secondLevelLocation = pathArray[4];
+            console.log('hello', secondLevelLocation)
         })
         
         
