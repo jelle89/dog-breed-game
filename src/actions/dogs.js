@@ -52,41 +52,39 @@ export function makeQuestion () {
         // console.log('dispatch test:', dispatch)
         const state = getState();
         // console.log("STATE", state)
-        if (state.dogs.length === 0) {
             
-            request('https://dog.ceo/api/breeds/list/all')
-                .then(response => {
-                    // console.log('response test:', response)
-                    const dogs = Object.keys(response.body.message)
-                    dispatch(setDogs(dogs))
+        request('https://dog.ceo/api/breeds/list/all')
+            .then(response => {
+                // console.log('response test:', response)
+                const dogs = Object.keys(response.body.message)
+                dispatch(setDogs(dogs))
 
-                    // dispatch a question and answer to redux
-                    const question = createQuestion(dogs)
+                // dispatch a question and answer to redux
+                const question = createQuestion(dogs)
 
-                    const { answer } = question
-                    // ^^^ This is the same as writing:
-                    // const answer = question.answer
+                const { answer } = question
+                // ^^^ This is the same as writing:
+                // const answer = question.answer
 
-                    const component = encodeURIComponent(answer)
-                    console.log('component test:', component)
-                    const url = `https://dog.ceo/api/breed/${component}/images/random`
+                const component = encodeURIComponent(answer)
+                console.log('component test:', component)
+                const url = `https://dog.ceo/api/breed/${component}/images/random`
 
-                    request(url)
-                        .then(response => {
-                            console.log('response test:', response.body)
-                            const { message } = response.body
-                            // const messages = response.body.message
-                            console.log('message test:', message)
-                            question.image = message
+                request(url)
+                    .then(response => {
+                        console.log('response test:', response.body)
+                        const { message } = response.body
+                        // const messages = response.body.message
+                        console.log('message test:', message)
+                        question.image = message
 
-                            const action = setQuestion(question)
-                            dispatch(action)
-                            // ^^^ Same as writing:
-                            // dispatch(setQuestion(question))
-                        })
-                    console.log("questions and answers:", { ...question })
-                    console.log('how', Object.keys(question))
-                })
-        } 
+                        const action = setQuestion(question)
+                        dispatch(action)
+                        // ^^^ Same as writing:
+                        // dispatch(setQuestion(question))
+                    })
+                console.log("questions and answers:", { ...question })
+                console.log('how', Object.keys(question))
+            })
   }
 }

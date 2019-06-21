@@ -8,12 +8,8 @@ import BreedImagesContainer from './components/BreedImagesContainer'
 import HomePage from './components/HomePage';
 import AnswersListContainer from './components/AnswersListContainer';
 import GameOne from './components/GameOne'
-<<<<<<< HEAD
 import GameTwo from './components/GameTwo'
-
-=======
 import RandomImageContainer from './components/RandomImageContainer'
->>>>>>> fa352413570a71669c13246a0a1bb4f4aafcb8aa
 
 class App extends React.Component {
   render() {
@@ -29,11 +25,8 @@ class App extends React.Component {
             <Route exact path="/breed/:breed" component={BreedImagesContainer} />
             <Route exact path="/gametest" component={AnswersListContainer} />
             <Route exact path="/gameone" component={GameOne} />
-<<<<<<< HEAD
             <Route exact path="/gametwo" component={GameTwo} />
-=======
             <Route exact path="/randomimage" component={RandomImageContainer} />
->>>>>>> fa352413570a71669c13246a0a1bb4f4aafcb8aa
             
           </main>
         </div>

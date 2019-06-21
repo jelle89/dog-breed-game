@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { makeQuestion } from '../actions/dogs';
 //import {Link} from 'react-router-dom'
 
 export default function AnswersList(props) {
@@ -6,19 +7,24 @@ export default function AnswersList(props) {
     console.log('PROPS', props)
     
 
-    function refreshPage() {
-        window.location.reload()
-    }
 
     function checkAnswer(guess) {
         const isCorrect = guess === props.answer
 
         if (isCorrect) {
             alert('correct');
-            refreshPage(isCorrect)
+            handleClick()
         } else {
             alert(`incorrect! Here is the hint! ${props.answer}`)
         }
+    }
+    
+    function refreshPage() {
+        window.location.reload()
+    }
+
+    const handleClick =() => {
+        dispatchEvent(makeQuestion(refreshPage()))
     }
 
     
