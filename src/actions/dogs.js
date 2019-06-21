@@ -87,10 +87,6 @@ export function makeQuestion () {
                     console.log("questions and answers:", { ...question })
                     console.log('how', Object.keys(question))
                 })
-        } else {
-            
-            // dispatch a question and answer to redux here
-            
-    }
+        } 
   }
 }
