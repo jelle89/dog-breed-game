@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 # DOG BREED GAME
+=======
+
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+>>>>>>> feature3/gameone
 
 ## This is the 1st group project at Codaisseur.
 Check out the demo here.<br/>

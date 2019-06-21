@@ -27,6 +27,10 @@ class App extends React.Component {
             <Route exact path="/gameone" component={GameOne} />
             <Route exact path="/gametwo" component={GameTwo} />
             <Route exact path="/randomimage" component={RandomImageContainer} />
+<<<<<<< HEAD
+=======
+            
+>>>>>>> feature3/gameone
           </main>
         </div>
       </Provider>
