@@ -2,7 +2,7 @@ import React from 'react'
 import AnswersListContainer from './AnswersListContainer';
 import { makeQuestion } from '../actions/dogs'
 import { connect } from 'react-redux'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class GameOne extends React.Component {    
     componentDidMount() {

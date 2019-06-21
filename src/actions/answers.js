@@ -1,12 +1,5 @@
 
-export function getCorrectAnswer(correctA) {
-    return {
-        type: "CORRECT_ANSWER",
-        payload: {
-            correctAnswer: correctA
-        }
-    }
-}
+
 
 export function setRandomBreeds(wronga1, wronga2) {
     return {

@@ -1,9 +1,16 @@
 import React from 'react'
-import AnswersListContainer from './AnswersListContainer';
+import { Link } from 'react-router-dom'
 
-class GameTwo extends React.Component {
+
+export default class GameTwo extends React.Component {
     render() {
-        return()
+        console.log('start')
+
+        return(
+        <div>
+            <Link to='/'>Go to hompage</Link>
+        </div>
+        )
     }
 
 }

@@ -2,21 +2,25 @@ import * as React from 'react'
 //import {Link} from 'react-router-dom'
 
 export default function AnswersList(props) {
-    // questions:
-    // YES getting called?
-    // do we have props?
+    
     console.log('PROPS', props)
-    // what are they { answers: [] }
+    
+
+    function refreshPage() {
+        window.location.reload()
+    }
 
     function checkAnswer(guess) {
         const isCorrect = guess === props.answer
 
         if (isCorrect) {
-            alert('correct')
+            alert('correct');
+            refreshPage(isCorrect)
         } else {
-            alert(`incorrect! the answer is ${props.answer}`)
+            alert(`incorrect! Here is the hint! ${props.answer}`)
         }
     }
+
     
     function renderButton(answer) {
         // geeting clled?
@@ -24,7 +28,7 @@ export default function AnswersList(props) {
         console.log('answer', answer) // "malinois"
         return (
             <li key={answer}>
-                <button onClick={() => checkAnswer(answer)}>
+                <button onClick={() => checkAnswer(answer)} >
                     { answer }
                 </button>
             </li>
